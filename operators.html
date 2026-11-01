@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>C Language - Operators</title>
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<p style="text-align:right;">
+<a href="c-language.html">Back to Home Page</a>
+</p>
+    <h1 style="text-align: center;">C Language Learning</h1>
+    <p>Learn C Programming Easily</p>
+
+    <h2>Operators Programs</h2>
+    <hr>
+
+    <h2>Question 1.</h2>
+    <p>Write a program to show an example of pre-increment?</p>
+    <details>
+        <summary>View Solution</summary>
+        <h3>C Program Code</h3>
+        <pre><code>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    int a=10;
+    clrscr();
+
+    printf("Value of a = %d\n",a);
+    printf("Pre Increment = %d",++a);
+
+    getch();
+}</code></pre>
+        <h3>Sample Output</h3>
+        <pre>Value of a = 10
+Pre Increment = 11</pre>
+    </details>
+    <hr>
+
+    <h2>Question 2.</h2>
+    <p>Write a program to show an example of post-increment?</p>
+    <details>
+        <summary>View Solution</summary>
+        <h3>C Program Code</h3>
+        <pre><code>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    int a=10;
+    clrscr();
+
+    printf("Value of a = %d\n",a);
+    printf("Post Increment = %d\n",a++);
+    printf("New value of a = %d",a);
+
+    getch();
+}</code></pre>
+        <h3>Sample Output</h3>
+        <pre>Value of a = 10
+Post Increment = 10
+New value of a = 11</pre>
+    </details>
+    <hr>
+
+    <h2>Question 3.</h2>
+    <p>Write a program to show an example of pre-decrement?</p>
+    <details>
+        <summary>View Solution</summary>
+        <h3>C Program Code</h3>
+        <pre><code>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    int a=10;
+    clrscr();
+
+    printf("Value of a = %d\n",a);
+    printf("Pre Decrement = %d",--a);
+
+    getch();
+}</code></pre>
+        <h3>Sample Output</h3>
+        <pre>Value of a = 10
+Pre Decrement = 9</pre>
+    </details>
+    <hr>
+
+    <h2>Question 4.</h2>
+    <p>Write a program to show an example of post-decrement?</p>
+    <details>
+        <summary>View Solution</summary>
+        <h3>C Program Code</h3>
+        <pre><code>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    int a=10;
+    clrscr();
+
+    printf("Value of a = %d\n",a);
+    printf("Post Decrement = %d\n",a--);
+    printf("New value of a = %d",a);
+
+    getch();
+}</code></pre>
+        <h3>Sample Output</h3>
+        <pre>Value of a = 10
+Post Decrement = 10
+New value of a = 9</pre>
+    </details>
+    <hr>
+
+    <h2>Question 5.</h2>
+    <p>Write a program to enter 2 numbers from user, add the numbers and show the answer, again take 2 numbers from user and subtract the numbers, display the answer, again take 2 numbers from user and multiply the numbers, display the answer, again take 2 numbers from user and divide the numbers, display the answer, again take 2 numbers, find the remainder and display the answer?</p>
+    <details>
+        <summary>View Solution</summary>
+        <h3>C Program Code</h3>
+        <pre><code>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    int a,b;
+    clrscr();
+
+    printf("Enter two numbers for addition: ");
+    scanf("%d%d",&amp;a,&amp;b);
+    printf("Addition = %d\n",a+b);
+
+    printf("\nEnter two numbers for subtraction: ");
+    scanf("%d%d",&amp;a,&amp;b);
+    printf("Subtraction = %d\n",a-b);
+
+    printf("\nEnter two numbers for multiplication: ");
+    scanf("%d%d",&amp;a,&amp;b);
+    printf("Multiplication = %d\n",a*b);
+
+    printf("\nEnter two numbers for division: ");
+    scanf("%d%d",&amp;a,&amp;b);
+
+    if(b!=0)
+        printf("Division = %d\n",a/b);
+    else
+        printf("Division not possible\n");
+
+    printf("\nEnter two numbers for remainder: ");
+    scanf("%d%d",&amp;a,&amp;b);
+
+    if(b!=0)
+        printf("Remainder = %d",a%b);
+    else
+        printf("Remainder not possible");
+
+    getch();
+}</code></pre>
+        <h3>Sample Output</h3>
+        <pre>Enter two numbers for addition: 10 5
+Addition = 15
+
+Enter two numbers for subtraction: 20 5
+Subtraction = 15
+
+Enter two numbers for multiplication: 4 5
+Multiplication = 20
+
+Enter two numbers for division: 20 4
+Division = 5
+
+Enter two numbers for remainder: 10 3
+Remainder = 1</pre>
+    </details>
+    <hr>
+
+    <h2>Question 6.</h2>
+    <p>Write a program to enter a number from the user. The length of the number depends on the user. Programmer should print the last digit of the number?</p>
+    <details>
+        <summary>View Solution</summary>
+        <h3>C Program Code</h3>
+        <pre><code>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    int num,rem;
+    clrscr();
+
+    printf("Enter a number: ");
+    scanf("%d",&amp;num);
+
+    rem=num%10;
+
+    if(rem&lt;0)
+        rem=-rem;
+
+    printf("Last digit = %d",rem);
+
+    getch();
+}</code></pre>
+        <h3>Sample Output</h3>
+        <pre>Enter a number: 12345
+Last digit = 5</pre>
+    </details>
+    <hr>
+
+    <h2>Question 7.</h2>
+    <p>Enter a decimal number from the user (float) and print the right hand side of the decimal point?</p>
+    <details>
+        <summary>View Solution</summary>
+        <h3>C Program Code</h3>
+        <pre><code>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    float num,decimal;
+    int a;
+    clrscr();
+
+    printf("Enter a decimal number: ");
+    scanf("%f",&amp;num);
+
+    a=num;
+    decimal=num-a;
+
+    if(decimal&lt;0)
+        decimal=-decimal;
+
+    printf("Right side of decimal = %f",decimal);
+
+    getch();
+}</code></pre>
+        <h3>Sample Output</h3>
+        <pre>Enter a decimal number: 12.75
+Right side of decimal = 0.750000</pre>
+    </details>
+    <hr>
+
+    <h2>Question 8.</h2>
+    <p>Enter a number from user and find out cube of the number?</p>
+    <details>
+        <summary>View Solution</summary>
+        <h3>C Program Code</h3>
+        <pre><code>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    int num,cube;
+    clrscr();
+
+    printf("Enter a number: ");
+    scanf("%d",&amp;num);
+
+    cube=num*num*num;
+
+    printf("Cube = %d",cube);
+
+    getch();
+}</code></pre>
+        <h3>Sample Output</h3>
+        <pre>Enter a number: 5
+Cube = 125</pre>
+    </details>
+    <hr>
+
+    <h2>Question 9.</h2>
+    <p>Enter float number from user and round off the number?</p>
+    <details>
+        <summary>View Solution</summary>
+        <h3>C Program Code</h3>
+        <pre><code>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    float num;
+    int round;
+    clrscr();
+
+    printf("Enter a float number: ");
+    scanf("%f",&amp;num);
+
+    round=num+0.5;
+
+    printf("Rounded number = %d",round);
+
+    getch();
+}</code></pre>
+        <h3>Sample Output</h3>
+        <pre>Enter a float number: 12.7
+Rounded number = 13</pre>
+    </details>
+    <hr>
+
+    <h2>Question 10.</h2>
+    <p>Enter a lower case character from user and print it into upper case?</p>
+    <details>
+        <summary>View Solution</summary>
+        <h3>C Program Code</h3>
+        <pre><code>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    char ch;
+    clrscr();
+
+    printf("Enter a lower case character: ");
+    scanf("%c",&amp;ch);
+
+    ch=ch-32;
+
+    printf("Upper case character = %c",ch);
+
+    getch();
+}</code></pre>
+        <h3>Sample Output</h3>
+        <pre>Enter a lower case character: a
+Upper case character = A</pre>
+    </details>
+    <hr>
+
+    <h2>Question 11.</h2>
+    <p>Enter marks of students and calculate average of student's marks?</p>
+    <details>
+        <summary>View Solution</summary>
+        <h3>C Program Code</h3>
+        <pre><code>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    int a,b,c,d,e;
+    float avg;
+    clrscr();
+
+    printf("Enter marks of five subjects: ");
+    scanf("%d%d%d%d%d",&amp;a,&amp;b,&amp;c,&amp;d,&amp;e);
+
+    avg=(a+b+c+d+e)/5.0;
+
+    printf("Average marks = %f",avg);
+
+    getch();
+}</code></pre>
+        <h3>Sample Output</h3>
+        <pre>Enter marks of five subjects: 70 80 60 90 100
+Average marks = 80.000000</pre>
+    </details>
+    <hr>
+
+    <h2>Question 12.</h2>
+    <p>Calculate simple interest = (P x R x T) / 100?</p>
+    <details>
+        <summary>View Solution</summary>
+        <h3>C Program Code</h3>
+        <pre><code>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    float p,r,t,si;
+    clrscr();
+
+    printf("Enter principal amount: ");
+    scanf("%f",&amp;p);
+
+    printf("Enter rate: ");
+    scanf("%f",&amp;r);
+
+    printf("Enter time: ");
+    scanf("%f",&amp;t);
+
+    si=(p*r*t)/100;
+
+    printf("Simple Interest = %f",si);
+
+    getch();
+}</code></pre>
+        <h3>Sample Output</h3>
+        <pre>Enter principal amount: 1000
+Enter rate: 5
+Enter time: 2
+Simple Interest = 100.000000</pre>
+    </details>
+    <hr>
+
+</body>
+</html>

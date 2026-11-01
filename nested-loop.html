@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>C Language - Nested Loops</title>
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<p style="text-align:right;">
+<a href="c-language.html">Back to Home Page</a>
+</p>
+<h1 style="text-align: center;">C Language Learning</h1>
+
+<h2>Nested Loops</h2>
+
+<hr>
+
+<h2>Question 1.</h2>
+<p>Write a program to print the following pattern on the screen:</p>
+
+<pre>
+11111
+11111
+11111
+</pre>
+
+<details>
+<summary>View Solution</summary>
+
+<h3>C Program Code</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    int i, j;
+
+    clrscr();
+
+    for(i=1; i&lt;=3; i++)
+    {
+        for(j=1; j&lt;=5; j++)
+        {
+            printf("1");
+        }
+
+        printf("\n");
+    }
+
+    getch();
+}
+</code></pre>
+
+<h3>Sample Output</h3>
+<pre>
+11111
+11111
+11111
+</pre>
+</details>
+
+<hr>
+
+</body>
+</html>

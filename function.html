@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>C Language - Functions</title>
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<p style="text-align:right;">
+<a href="c-language.html">Back to Home Page</a>
+</p>
+    <h1 style="text-align: center;">C Language Learning</h1>
+    <p>Learn C Programming Easily</p>
+
+    <h2>Functions Programs</h2>
+    <hr>
+
+    <h2>Question 1.</h2>
+    <p>Write a program to enter 2 numbers from the user, add them and display the answer, again enter 2 numbers from the user, subtract them and display the answer, again enter 2 numbers from the user, add them and display the answer, again enter 2 numbers from the user, multiply them and display the answer, again enter 2 numbers from the user, subtract them and display the answer, again enter 2 numbers from the user, multiply them and display the answer, again enter 2 numbers from the user, divide them and display the answer, again enter 2 numbers from the user, divide them and display the answer, again enter 2 numbers from the user, add them and display the answer?</p>
+
+    <details>
+        <summary>View Solution</summary>
+        <h3>C Program Code</h3>
+        <pre><code>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    int a,b;
+
+    clrscr();
+
+    printf("Enter two numbers for addition: ");
+    scanf("%d%d",&amp;a,&amp;b);
+    printf("Addition = %d\n",a+b);
+
+    printf("\nEnter two numbers for subtraction: ");
+    scanf("%d%d",&amp;a,&amp;b);
+    printf("Subtraction = %d\n",a-b);
+
+    printf("\nEnter two numbers for addition: ");
+    scanf("%d%d",&amp;a,&amp;b);
+    printf("Addition = %d\n",a+b);
+
+    printf("\nEnter two numbers for multiplication: ");
+    scanf("%d%d",&amp;a,&amp;b);
+    printf("Multiplication = %d\n",a*b);
+
+    printf("\nEnter two numbers for subtraction: ");
+    scanf("%d%d",&amp;a,&amp;b);
+    printf("Subtraction = %d\n",a-b);
+
+    printf("\nEnter two numbers for multiplication: ");
+    scanf("%d%d",&amp;a,&amp;b);
+    printf("Multiplication = %d\n",a*b);
+
+    printf("\nEnter two numbers for division: ");
+    scanf("%d%d",&amp;a,&amp;b);
+    if(b!=0)
+        printf("Division = %d\n",a/b);
+    else
+        printf("Division not possible\n");
+
+    printf("\nEnter two numbers for division: ");
+    scanf("%d%d",&amp;a,&amp;b);
+    if(b!=0)
+        printf("Division = %d\n",a/b);
+    else
+        printf("Division not possible\n");
+
+    printf("\nEnter two numbers for addition: ");
+    scanf("%d%d",&amp;a,&amp;b);
+    printf("Addition = %d\n",a+b);
+
+    getch();
+}</code></pre>
+
+        <h3>Sample Output</h3>
+        <pre>Enter two numbers for addition: 10 5
+Addition = 15
+
+Enter two numbers for subtraction: 20 5
+Subtraction = 15
+
+Enter two numbers for addition: 4 6
+Addition = 10
+
+Enter two numbers for multiplication: 5 3
+Multiplication = 15
+
+Enter two numbers for subtraction: 15 5
+Subtraction = 10
+
+Enter two numbers for multiplication: 4 5
+Multiplication = 20
+
+Enter two numbers for division: 20 4
+Division = 5
+
+Enter two numbers for division: 30 5
+Division = 6
+
+Enter two numbers for addition: 7 8
+Addition = 15</pre>
+    </details>
+    <hr>
+
+    <h2>Question 2.</h2>
+    <p>Write a program to enter 10 numbers from the user, add the numbers and display the answer?</p>
+
+    <details>
+        <summary>View Solution</summary>
+        <h3>C Program Code</h3>
+        <pre><code>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    int num,sum=0,i;
+
+    clrscr();
+
+    for(i=1;i&lt;=10;i++)
+    {
+        printf("Enter number: ");
+        scanf("%d",&amp;num);
+
+        sum=sum+num;
+    }
+
+    printf("Sum = %d",sum);
+
+    getch();
+}</code></pre>
+
+        <h3>Sample Output</h3>
+        <pre>Enter number: 1
+Enter number: 2
+Enter number: 3
+Enter number: 4
+Enter number: 5
+Enter number: 6
+Enter number: 7
+Enter number: 8
+Enter number: 9
+Enter number: 10
+Sum = 55</pre>
+    </details>
+    <hr>
+
+    <h2>Question 3.</h2>
+    <p>Write a program to return an array from function?</p>
+
+    <details>
+        <summary>View Solution</summary>
+        <h3>C Program Code</h3>
+        <pre><code>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int* getArray()
+{
+    static int a[5];
+    int i;
+
+    for(i=0;i&lt;5;i++)
+    {
+        printf("Enter value: ");
+        scanf("%d",&amp;a[i]);
+    }
+
+    return a;
+}
+
+void main()
+{
+    int *p,i;
+
+    clrscr();
+
+    p=getArray();
+
+    printf("\nArray values are:\n");
+
+    for(i=0;i&lt;5;i++)
+    {
+        printf("%d ",p[i]);
+    }
+
+    getch();
+}</code></pre>
+
+        <h3>Sample Output</h3>
+        <pre>Enter value: 10
+Enter value: 20
+Enter value: 30
+Enter value: 40
+Enter value: 50
+
+Array values are:
+10 20 30 40 50</pre>
+    </details>
+    <hr>
+
+    <h2>Question 4.</h2>
+    <p>Make the following programs using local and global variables: Factorial, Reverse, Palindrome, Prime Numbers, Armstrong and Fibonacci.</p>
+
+    <details>
+        <summary>View Solution</summary>
+
+        <h3>1. Factorial</h3>
+        <pre><code>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int num;
+
+void main()
+{
+    int i,fact=1;
+
+    clrscr();
+
+    printf("Enter a number: ");
+    scanf("%d",&amp;num);
+
+    for(i=1;i&lt;=num;i++)
+    {
+        fact=fact*i;
+    }
+
+    printf("Factorial = %d",fact);
+
+    getch();
+}</code></pre>
+        <h3>Sample Output</h3>
+        <pre>Enter a number: 5
+Factorial = 120</pre>
+
+        <hr>
+        <h3>2. Reverse Number</h3>
+        <pre><code>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int num;
+
+void main()
+{
+    int rem,rev=0;
+
+    clrscr();
+
+    printf("Enter a number: ");
+    scanf("%d",&amp;num);
+
+    while(num&gt;0)
+    {
+        rem=num%10;
+        rev=rev*10+rem;
+        num=num/10;
+    }
+
+    printf("Reverse = %d",rev);
+
+    getch();
+}</code></pre>
+        <h3>Sample Output</h3>
+        <pre>Enter a number: 1234
+Reverse = 4321</pre>
+
+        <hr>
+        <h3>3. Palindrome Number</h3>
+        <pre><code>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int num;
+
+void main()
+{
+    int rem,rev=0,temp;
+
+    clrscr();
+
+    printf("Enter a number: ");
+    scanf("%d",&amp;num);
+
+    temp=num;
+
+    while(num&gt;0)
+    {
+        rem=num%10;
+        rev=rev*10+rem;
+        num=num/10;
+    }
+
+    if(temp==rev)
+        printf("Palindrome number");
+    else
+        printf("Not a palindrome number");
+
+    getch();
+}</code></pre>
+        <h3>Sample Output</h3>
+        <pre>Enter a number: 121
+Palindrome number</pre>
+
+        <hr>
+        <h3>4. Prime Number</h3>
+        <pre><code>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int num;
+
+void main()
+{
+    int i,count=0;
+
+    clrscr();
+
+    printf("Enter a number: ");
+    scanf("%d",&amp;num);
+
+    for(i=1;i&lt;=num;i++)
+    {
+        if(num%i==0)
+        {
+            count++;
+        }
+    }
+
+    if(count==2)
+        printf("Prime number");
+    else
+        printf("Not a prime number");
+
+    getch();
+}</code></pre>
+        <h3>Sample Output</h3>
+        <pre>Enter a number: 7
+Prime number</pre>
+
+        <hr>
+        <h3>5. Armstrong Number</h3>
+        <pre><code>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int num;
+
+void main()
+{
+    int rem,sum=0,temp;
+
+    clrscr();
+
+    printf("Enter a number: ");
+    scanf("%d",&amp;num);
+
+    temp=num;
+
+    while(num&gt;0)
+    {
+        rem=num%10;
+        sum=sum+rem*rem*rem;
+        num=num/10;
+    }
+
+    if(temp==sum)
+        printf("Armstrong number");
+    else
+        printf("Not an Armstrong number");
+
+    getch();
+}</code></pre>
+        <h3>Sample Output</h3>
+        <pre>Enter a number: 153
+Armstrong number</pre>
+
+        <hr>
+        <h3>6. Fibonacci Series</h3>
+        <pre><code>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int num;
+
+void main()
+{
+    int a=0,b=1,c,i;
+
+    clrscr();
+
+    printf("Enter number of terms: ");
+    scanf("%d",&amp;num);
+
+    for(i=1;i&lt;=num;i++)
+    {
+        printf("%d ",a);
+
+        c=a+b;
+        a=b;
+        b=c;
+    }
+
+    getch();
+}</code></pre>
+        <h3>Sample Output</h3>
+        <pre>Enter number of terms: 7
+0 1 1 2 3 5 8</pre>
+    </details>
+    <hr>
+
+    <h2>Question 5.</h2>
+    <p>Swap numbers using Call by Address?</p>
+
+    <details>
+        <summary>View Solution</summary>
+        <h3>C Program Code</h3>
+        <pre><code>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void swap(int *a,int *b)
+{
+    int temp;
+
+    temp=*a;
+    *a=*b;
+    *b=temp;
+}
+
+void main()
+{
+    int a,b;
+
+    clrscr();
+
+    printf("Enter two numbers: ");
+    scanf("%d%d",&amp;a,&amp;b);
+
+    swap(&amp;a,&amp;b);
+
+    printf("After swapping:\n");
+    printf("a = %d\n",a);
+    printf("b = %d",b);
+
+    getch();
+}</code></pre>
+
+        <h3>Sample Output</h3>
+        <pre>Enter two numbers: 10 20
+
+After swapping:
+a = 20
+b = 10</pre>
+    </details>
+    <hr>
+
+    <h2>Question 6.</h2>
+    <p>Swap numbers using function?</p>
+
+    <details>
+        <summary>View Solution</summary>
+        <h3>C Program Code</h3>
+        <pre><code>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void swap()
+{
+    int a,b,temp;
+
+    printf("Enter two numbers: ");
+    scanf("%d%d",&amp;a,&amp;b);
+
+    temp=a;
+    a=b;
+    b=temp;
+
+    printf("After swapping:\n");
+    printf("a = %d\n",a);
+    printf("b = %d",b);
+}
+
+void main()
+{
+    clrscr();
+
+    swap();
+
+    getch();
+}</code></pre>
+
+        <h3>Sample Output</h3>
+        <pre>Enter two numbers: 10 20
+
+After swapping:
+a = 20
+b = 10</pre>
+    </details>
+    <hr>
+
+    <h2>Question 7.</h2>
+    <p>Make a function to find out the power of a number. Enter the number and power from the user?</p>
+
+    <details>
+        <summary>View Solution</summary>
+        <h3>C Program Code</h3>
+        <pre><code>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int power(int num,int p)
+{
+    int i,ans=1;
+
+    for(i=1;i&lt;=p;i++)
+    {
+        ans=ans*num;
+    }
+
+    return ans;
+}
+
+void main()
+{
+    int num,p,ans;
+
+    clrscr();
+
+    printf("Enter a number: ");
+    scanf("%d",&amp;num);
+
+    printf("Enter power: ");
+    scanf("%d",&amp;p);
+
+    ans=power(num,p);
+
+    printf("Answer = %d",ans);
+
+    getch();
+}</code></pre>
+
+        <h3>Sample Output</h3>
+        <pre>Enter a number: 2
+Enter power: 3
+Answer = 8</pre>
+    </details>
+    <hr>
+
+    <h2>Question 8.</h2>
+    <p>Make a function to find out the cube of a user entered number?</p>
+
+    <details>
+        <summary>View Solution</summary>
+        <h3>C Program Code</h3>
+        <pre><code>#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int cube(int num)
+{
+    return num*num*num;
+}
+
+void main()
+{
+    int num,ans;
+
+    clrscr();
+
+    printf("Enter a number: ");
+    scanf("%d",&amp;num);
+
+    ans=cube(num);
+
+    printf("Cube = %d",ans);
+
+    getch();
+}</code></pre>
+
+        <h3>Sample Output</h3>
+        <pre>Enter a number: 5
+Cube = 125</pre>
+    </details>
+    <hr>
+
+</body>
+</html>

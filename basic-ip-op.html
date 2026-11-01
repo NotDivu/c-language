@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="css/style.css">
+    <title>C Language - Basic Input Output</title>
+</head>
+<body>
+<p style="text-align:right;">
+<a href="c-language.html">Back to Home Page</a>
+</p>
+<h1 style="text-align: center;">C Language Learning</h1>
+
+<h2>Basic Input Output</h2>
+
+<hr>
+
+<h2>Question 1.</h2>
+<p>Write a program to print the message: Today I made my first C Program.</p>
+
+<details>
+<summary>View Solution</summary>
+
+<h3>C Program Code</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    clrscr();
+
+    printf("Today I made my first C Program.");
+
+    getch();
+}
+</code></pre>
+
+<h3>Sample Output</h3>
+<pre>
+Today I made my first C Program.
+</pre>
+</details>
+
+<hr>
+
+<h2>Question 2.</h2>
+<p>Write a program to read a character from the keyboard and display it on the screen.</p>
+
+<details>
+<summary>View Solution</summary>
+
+<h3>C Program Code</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    char ch;
+
+    clrscr();
+
+    printf("Enter a character: ");
+    scanf("%c", &amp;ch);
+
+    printf("Character = %c", ch);
+
+    getch();
+}
+</code></pre>
+
+<h3>Sample Output</h3>
+<pre>
+Enter a character: A
+Character = A
+</pre>
+</details>
+
+<hr>
+
+<h2>Question 3.</h2>
+<p>Write a program to read only 4 characters from the keyboard and display them on the screen in separate lines.</p>
+
+<details>
+<summary>View Solution</summary>
+
+<h3>C Program Code</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    char ch;
+    int i;
+
+    clrscr();
+
+    printf("Enter 4 characters:\n");
+
+    for(i=0; i&lt;4; i++)
+    {
+        scanf(" %c", &amp;ch);
+        printf("%c\n", ch);
+    }
+
+    getch();
+}
+</code></pre>
+
+<h3>Sample Output</h3>
+<pre>
+Enter 4 characters:
+A
+B
+C
+D
+
+A
+B
+C
+D
+</pre>
+</details>
+
+<hr>
+
+<h2>Question 4.</h2>
+<p>Write a program to print your name at the center of the first line.</p>
+
+<details>
+<summary>View Solution</summary>
+
+<h3>C Program Code</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    clrscr();
+
+    gotoxy(35,1);
+    printf("Simran");
+
+    getch();
+}
+</code></pre>
+
+<h3>Sample Output</h3>
+<pre>
+              Simran
+</pre>
+</details>
+
+<hr>
+
+<h2>Question 5.</h2>
+<p>Write a program to store single quote and print that variable to show single quote on output screen.</p>
+
+<details>
+<summary>View Solution</summary>
+
+<h3>C Program Code</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    char ch;
+
+    clrscr();
+
+    ch = '\'';
+
+    printf("%c", ch);
+
+    getch();
+}
+</code></pre>
+
+<h3>Sample Output</h3>
+<pre>
+'
+</pre>
+</details>
+
+<hr>
+
+<h2>Question 6.</h2>
+<p>Write a program for printing your name on output screen but your name should blink 5 times.</p>
+
+<details>
+<summary>View Solution</summary>
+
+<h3>C Program Code</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;dos.h&gt;
+
+void main()
+{
+    int i;
+
+    clrscr();
+
+    for(i=1; i&lt;=5; i++)
+    {
+        printf("Simran");
+        delay(500);
+        clrscr();
+        delay(500);
+    }
+
+    getch();
+}
+</code></pre>
+
+<h3>Sample Output</h3>
+<pre>
+Simran
+
+(Name blinks 5 times)
+</pre>
+</details>
+
+<hr>
+
+<h2>Question 7.</h2>
+<p>Write a program to print your name at the center of the first line.</p>
+
+<details>
+<summary>View Solution</summary>
+
+<h3>C Program Code</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    clrscr();
+
+    gotoxy(35,1);
+    printf("Simran");
+
+    getch();
+}
+</code></pre>
+
+<h3>Sample Output</h3>
+<pre>
+             Simran
+</pre>
+</details>
+
+<hr>
+
+<h2>Question 8.</h2>
+<p>Write a program to display this output: hello,welcome to c</p>
+
+<details>
+<summary>View Solution</summary>
+
+<h3>C Program Code</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;dos.h&gt;
+
+void main()
+{
+    clrscr();
+
+    printf("hello,welcome to c");
+
+    delay(5000);
+
+    getch();
+}
+</code></pre>
+
+<h3>Sample Output</h3>
+<pre>
+hello,welcome to c
+</pre>
+</details>
+
+<hr>
+
+<h2>Question 9.</h2>
+<p>Write a program to print your name at the center of the page.</p>
+
+<details>
+<summary>View Solution</summary>
+
+<h3>C Program Code</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    clrscr();
+
+    gotoxy(35,12);
+    printf("Simran");
+
+    getch();
+}
+</code></pre>
+
+<h3>Sample Output</h3>
+<pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              Simran
+</pre>
+</details>
+
+<hr>
+
+<h2>Question 10.</h2>
+<p>Write a program to store single quote and print that variable to show single quote on output screen.</p>
+
+<details>
+<summary>View Solution</summary>
+
+<h3>C Program Code</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    char ch;
+
+    clrscr();
+
+    ch = '\'';
+
+    printf("%c", ch);
+
+    getch();
+}
+</code></pre>
+
+<h3>Sample Output</h3>
+<pre>
+'
+</pre>
+</details>
+
+<hr>
+
+<h2>Question 11.</h2>
+<p>Write a program for printing your name on output screen but your name should blink 5 times.</p>
+
+<details>
+<summary>View Solution</summary>
+
+<h3>C Program Code</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+#include &lt;dos.h&gt;
+
+void main()
+{
+    int i;
+
+    clrscr();
+
+    for(i=1; i&lt;=5; i++)
+    {
+        printf("Simran");
+        delay(500);
+        clrscr();
+        delay(500);
+    }
+
+    getch();
+}
+</code></pre>
+
+<h3>Sample Output</h3>
+<pre>
+Simran
+
+(Name blinks 5 times)
+</pre>
+</details>
+
+<hr>
+
+<h2>Question 12.</h2>
+<p>Enter password and display it like ******?</p>
+
+<details>
+<summary>View Solution</summary>
+
+<h3>C Program Code</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    char ch;
+    int i=0;
+
+    clrscr();
+
+    printf("Enter password: ");
+
+    while(1)
+    {
+        ch = getch();
+
+        if(ch==13)
+        {
+            break;
+        }
+
+        printf("*");
+        i++;
+    }
+
+    printf("\nPassword entered");
+
+    getch();
+}
+</code></pre>
+
+<h3>Sample Output</h3>
+<pre>
+Enter password: ******
+
+Password entered
+</pre>
+</details>
+
+<hr>
+
+<h2>Question 13.</h2>
+<p>Enter two characters from user and print their ASCII values.</p>
+
+<details>
+<summary>View Solution</summary>
+
+<h3>C Program Code</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    char ch1, ch2;
+
+    clrscr();
+
+    printf("Enter first character: ");
+    scanf(" %c", &amp;ch1);
+
+    printf("Enter second character: ");
+    scanf(" %c", &amp;ch2);
+
+    printf("ASCII value of %c = %d\n", ch1, ch1);
+    printf("ASCII value of %c = %d", ch2, ch2);
+
+    getch();
+}
+</code></pre>
+
+<h3>Sample Output</h3>
+<pre>
+Enter first character: A
+Enter second character: B
+
+ASCII value of A = 65
+ASCII value of B = 66
+</pre>
+</details>
+
+<hr>
+
+<h2>Question 14.</h2>
+<p>Print all ASCII characters from 0 to 127.</p>
+
+<details>
+<summary>View Solution</summary>
+
+<h3>C Program Code</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    int i;
+
+    clrscr();
+
+    for(i=0; i&lt;=127; i++)
+    {
+        printf("%d = %c\n", i, i);
+    }
+
+    getch();
+}
+</code></pre>
+
+<h3>Sample Output</h3>
+<pre>
+0 =
+1 =
+2 =
+...
+48 = 0
+49 = 1
+50 = 2
+...
+65 = A
+66 = B
+67 = C
+...
+97 = a
+98 = b
+...
+127 =
+</pre>
+</details>
+
+<hr>
+
+</body>
+</html>

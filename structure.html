@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>C Language - Structure</title>
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<p style="text-align:right;">
+<a href="c-language.html">Back to Home Page</a>
+</p>
+<h1 style="text-align: center;">C Language Learning</h1>
+
+<h2>Structure</h2>
+
+<hr>
+
+<h2>Question 1.</h2>
+<p>Create structure of employee which there is emp.ID, name, designation of 50 employees from user, print details in tabular form?</p>
+
+<details>
+<summary>View Solution</summary>
+
+<h3>C Program Code</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+struct employee
+{
+    int id;
+    char name[30];
+    char designation[30];
+};
+
+void main()
+{
+    struct employee emp[50];
+    int i;
+
+    clrscr();
+
+    for(i=0; i&lt;50; i++)
+    {
+        printf("Enter ID, Name and Designation of Employee %d:\n", i+1);
+        scanf("%d %s %s", &amp;emp[i].id, emp[i].name, emp[i].designation);
+    }
+
+    printf("\nID\tName\tDesignation\n");
+
+    for(i=0; i&lt;50; i++)
+    {
+        printf("%d\t%s\t%s\n", emp[i].id, emp[i].name, emp[i].designation);
+    }
+
+    getch();
+}
+</code></pre>
+
+<h3>Sample Output</h3>
+<pre>
+Enter ID, Name and Designation of Employee 1:
+101 Rahul Manager
+
+Enter ID, Name and Designation of Employee 2:
+102 Aman Clerk
+
+ID      Name    Designation
+101     Rahul   Manager
+102     Aman    Clerk
+...
+</pre>
+</details>
+
+<hr>
+
+<h2>Question 2.</h2>
+<p>Create structure of employee which there is emp.ID, name, designation of 50 employees from user and print only name of the employee?</p>
+
+<details>
+<summary>View Solution</summary>
+
+<h3>C Program Code</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+struct employee
+{
+    int id;
+    char name[30];
+    char designation[30];
+};
+
+void main()
+{
+    struct employee emp[50];
+    int i;
+
+    clrscr();
+
+    for(i=0; i&lt;50; i++)
+    {
+        printf("Enter ID, Name and Designation:\n");
+        scanf("%d %s %s", &amp;emp[i].id, emp[i].name, emp[i].designation);
+    }
+
+    printf("\nEmployee Names:\n");
+
+    for(i=0; i&lt;50; i++)
+    {
+        printf("%s\n", emp[i].name);
+    }
+
+    getch();
+}
+</code></pre>
+
+<h3>Sample Output</h3>
+<pre>
+Enter ID, Name and Designation:
+101 Rahul Manager
+
+Enter ID, Name and Designation:
+102 Aman Clerk
+
+Employee Names:
+Rahul
+Aman
+...
+</pre>
+</details>
+
+<hr>
+
+<h2>Question 3.</h2>
+<p>Create structure of employee which there is emp.ID, name, designation of 50 employees from user and print name character with emp.ID in tabular form?</p>
+
+<details>
+<summary>View Solution</summary>
+
+<h3>C Program Code</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+struct employee
+{
+    int id;
+    char name[30];
+    char designation[30];
+};
+
+void main()
+{
+    struct employee emp[50];
+    int i, j;
+
+    clrscr();
+
+    for(i=0; i&lt;50; i++)
+    {
+        printf("Enter ID, Name and Designation:\n");
+        scanf("%d %s %s", &amp;emp[i].id, emp[i].name, emp[i].designation);
+    }
+
+    printf("\nID\tCharacter\n");
+
+    for(i=0; i&lt;50; i++)
+    {
+        for(j=0; emp[i].name[j]!='\0'; j++)
+        {
+            printf("%d\t%c\n", emp[i].id, emp[i].name[j]);
+        }
+    }
+
+    getch();
+}
+</code></pre>
+
+<h3>Sample Output</h3>
+<pre>
+Enter ID, Name and Designation:
+101 Rahul Manager
+
+ID      Character
+101     R
+101     a
+101     h
+101     u
+101     l
+</pre>
+</details>
+
+<hr>
+
+<h2>Question 4.</h2>
+<p>Enter student details like roll, name, fee, DOB and print all the details by ascending order of roll number?</p>
+
+<details>
+<summary>View Solution</summary>
+
+<h3>C Program Code</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+struct student
+{
+    int roll;
+    char name[30];
+    float fee;
+    char dob[15];
+};
+
+void main()
+{
+    struct student s[5], temp;
+    int i, j;
+
+    clrscr();
+
+    for(i=0; i&lt;5; i++)
+    {
+        printf("Enter Roll, Name, Fee and DOB:\n");
+        scanf("%d %s %f %s", &amp;s[i].roll, s[i].name, &amp;s[i].fee, s[i].dob);
+    }
+
+    for(i=0; i&lt;5; i++)
+    {
+        for(j=0; j&lt;4-i; j++)
+        {
+            if(s[j].roll > s[j+1].roll)
+            {
+                temp = s[j];
+                s[j] = s[j+1];
+                s[j+1] = temp;
+            }
+        }
+    }
+
+    printf("\nRoll\tName\tFee\tDOB\n");
+
+    for(i=0; i&lt;5; i++)
+    {
+        printf("%d\t%s\t%.2f\t%s\n",
+
+
+
+        s[i].roll, s[i].name, s[i].fee, s[i].dob);
+    }
+
+    getch();
+}
+</code></pre>
+
+<h3>Sample Output</h3>
+<pre>
+Enter Roll, Name, Fee and DOB:
+103 Aman 15000 12-05-2007
+
+Enter Roll, Name, Fee and DOB:
+101 Rahul 12000 15-08-2006
+
+Roll    Name    Fee       DOB
+101     Rahul   12000.00  15-08-2006
+103     Aman    15000.00  12-05-2007
+...
+</pre>
+</details>
+
+<hr>
+
+</body>
+</html>
