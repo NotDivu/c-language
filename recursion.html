@@ -1,0 +1,147 @@
+<html>
+<head>
+    <title>Recursion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<p style="text-align:right;">
+<a href="c-language.html">Back to Home Page</a>
+</p>
+<h1 style="text-align: center;">Recursion</h1>
+
+<h2>Question 1.</h2>
+<p>Write a program of recursion and display the output.</p>
+
+<details>
+<summary>View Solution</summary>
+
+<h3>C Program Code</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void display(int n)
+{
+    if (n &lt;= 5)
+    {
+        printf("%d ", n);
+        display(n + 1);
+    }
+}
+
+void main()
+{
+    clrscr();
+
+    display(1);
+
+    getch();
+}
+</code></pre>
+
+<h3>Sample Output</h3>
+<pre>
+1 2 3 4 5
+</pre>
+</details>
+
+<hr>
+
+<h2>Question 2.</h2>
+<p>Write a program of recursion with global variable and display the output.</p>
+
+<details>
+<summary>View Solution</summary>
+
+<h3>C Program Code</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int n = 1;
+
+void display()
+{
+    if (n &lt;= 5)
+    {
+        printf("%d ", n);
+        n++;
+        display();
+    }
+}
+
+void main()
+{
+    clrscr();
+
+    display();
+
+    getch();
+}
+</code></pre>
+
+<h3>Sample Output</h3>
+<pre>
+1 2 3 4 5
+</pre>
+</details>
+
+<hr>
+
+<h2>Question 3.</h2>
+<p>Write a program of recursion with local variable and display the output.</p>
+
+<details>
+<summary>View Solution</summary>
+
+<h3>C Program Code</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+int factorial(int n)
+{
+    int f;
+
+    if (n == 1)
+    {
+        return 1;
+    }
+    else
+    {
+        f = n * factorial(n - 1);
+        return f;
+    }
+}
+
+void main()
+{
+    int num, result;
+
+    clrscr();
+
+    printf("Enter a number: ");
+    scanf("%d", &amp;num);
+
+    result = factorial(num);
+
+    printf("Factorial = %d", result);
+
+    getch();
+}
+</code></pre>
+
+<h3>Sample Output</h3>
+<pre>
+Enter a number: 5
+Factorial = 120
+</pre>
+</details>
+
+<hr>
+
+
+</body>
+</html>

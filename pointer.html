@@ -1,0 +1,173 @@
+<html>
+<head>
+    <title>Pointers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<p style="text-align:right;">
+<a href="c-language.html">Back to Home Page</a>
+</p>
+<h1 style="text-align: center;">Pointers</h1>
+
+<h2>Question 1.</h2>
+<p>Write a C program to enter and print all elements of an array using a pointer.</p>
+
+<details>
+<summary>View Solution</summary>
+
+<h3>C Program Code</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    int a[5], i;
+    int *p;
+
+    clrscr();
+
+    p = a;
+
+    printf("Enter 5 elements:\n");
+
+    for (i = 0; i &lt; 5; i++)
+    {
+        scanf("%d", p + i);
+    }
+
+    printf("Array elements are:\n");
+
+    for (i = 0; i &lt; 5; i++)
+    {
+        printf("%d ", *(p + i));
+    }
+
+    getch();
+}
+</code></pre>
+
+<h3>Sample Output</h3>
+<pre>
+Enter 5 elements:
+10
+20
+30
+40
+50
+
+Array elements are:
+10 20 30 40 50
+</pre>
+</details>
+
+<hr>
+
+<h2>Question 2.</h2>
+<p>Write a program to swap two numbers using pointers.</p>
+
+<details>
+<summary>View Solution</summary>
+
+<h3>C Program Code</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    int a, b, temp;
+    int *p, *q;
+
+    clrscr();
+
+    printf("Enter two numbers: ");
+    scanf("%d%d", &amp;a, &amp;b);
+
+    p = &amp;a;
+    q = &amp;b;
+
+    temp = *p;
+    *p = *q;
+    *q = temp;
+
+    printf("After swapping:\n");
+    printf("A = %d\n", a);
+    printf("B = %d", b);
+
+    getch();
+}
+</code></pre>
+
+<h3>Sample Output</h3>
+<pre>
+Enter two numbers: 10 20
+
+After swapping:
+A = 20
+B = 10
+</pre>
+</details>
+
+<hr>
+
+<h2>Question 3.</h2>
+<p>A pointer should point the array and through pointer we will fill all the locations of the array by asking the value from the user.</p>
+
+<details>
+<summary>View Solution</summary>
+
+<h3>C Program Code</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    int a[5], i;
+    int *p;
+
+    clrscr();
+
+    p = a;
+
+    printf("Enter 5 elements:\n");
+
+    for (i = 0; i &lt; 5; i++)
+    {
+        printf("Enter value: ");
+        scanf("%d", p + i);
+    }
+
+    printf("Array elements are:\n");
+
+    for (i = 0; i &lt; 5; i++)
+    {
+        printf("%d ", *(p + i));
+    }
+
+    getch();
+}
+</code></pre>
+
+<h3>Sample Output</h3>
+<pre>
+Enter 5 elements:
+Enter value: 5
+Enter value: 10
+Enter value: 15
+Enter value: 20
+Enter value: 25
+
+Array elements are:
+5 10 15 20 25
+</pre>
+</details>
+
+<hr>
+
+
+</body>
+</html>

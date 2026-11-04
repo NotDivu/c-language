@@ -1,0 +1,444 @@
+<html>
+<head>
+    <title>File Handling</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<p style="text-align:right;">
+<a href="c-language.html">Back to Home Page</a>
+</p>
+<h1 style="text-align: center;">File Handling</h1>
+
+<h2>Question 1.</h2>
+<p>Enter the file name from user, enter the data from the user and put the data in the file, but data should be in capital letters.</p>
+
+<details>
+<summary>View Solution</summary>
+
+<h3>C Program Code</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    FILE *fp;
+    char fname[30], ch;
+
+    clrscr();
+
+    printf("Enter file name: ");
+    scanf("%s", fname);
+
+    fp = fopen(fname, "w");
+
+    printf("Enter data (# to stop): ");
+    getchar();
+
+    while ((ch = getchar()) != '#')
+    {
+        if (ch &gt;= 'a' &amp;&amp; ch &lt;= 'z')
+        {
+            ch = ch - 32;
+        }
+
+        fputc(ch, fp);
+    }
+
+    fclose(fp);
+
+    printf("Data saved successfully.");
+
+    getch();
+}
+</code></pre>
+
+<h3>Sample Output</h3>
+<pre>
+Enter file name: data.txt
+Enter data (# to stop): hello world#
+Data saved successfully.
+
+File Content:
+HELLO WORLD
+</pre>
+</details>
+
+<hr>
+
+<h2>Question 2.</h2>
+<p>Enter the file name from user, enter data from user till user wants to enter.</p>
+
+<details>
+<summary>View Solution</summary>
+
+<h3>C Program Code</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    FILE *fp;
+    char fname[30], ch;
+
+    clrscr();
+
+    printf("Enter file name: ");
+    scanf("%s", fname);
+
+    fp = fopen(fname, "w");
+
+    printf("Enter data (# to stop): ");
+    getchar();
+
+    while ((ch = getchar()) != '#')
+    {
+        fputc(ch, fp);
+    }
+
+    fclose(fp);
+
+    printf("Data saved successfully.");
+
+    getch();
+}
+</code></pre>
+
+<h3>Sample Output</h3>
+<pre>
+Enter file name: data.txt
+Enter data (# to stop): Hello World#
+Data saved successfully.
+</pre>
+</details>
+
+<hr>
+
+<h2>Question 3.</h2>
+<p>Create a file and rename the file.</p>
+
+<details>
+<summary>View Solution</summary>
+
+<h3>C Program Code</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    FILE *fp;
+    char ch;
+
+    clrscr();
+
+    fp = fopen("old.txt", "w");
+
+    printf("Enter data: ");
+
+    while ((ch = getchar()) != '\n')
+    {
+        fputc(ch, fp);
+    }
+
+    fclose(fp);
+
+    rename("old.txt", "new.txt");
+
+    printf("File renamed successfully.");
+
+    getch();
+}
+</code></pre>
+
+<h3>Sample Output</h3>
+<pre>
+Enter data: Hello World
+File renamed successfully.
+
+Old File: old.txt
+New File: new.txt
+</pre>
+</details>
+
+<hr>
+
+<h2>Question 4.</h2>
+<p>Create a file and copy the file into another file.</p>
+
+<details>
+<summary>View Solution</summary>
+
+<h3>C Program Code</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    FILE *f1, *f2;
+    char ch;
+
+    clrscr();
+
+    f1 = fopen("first.txt", "w");
+
+    printf("Enter data (# to stop): ");
+
+    while ((ch = getchar()) != '#')
+    {
+        fputc(ch, f1);
+    }
+
+    fputc('#', f1);
+    fclose(f1);
+
+    f1 = fopen("first.txt", "r");
+    f2 = fopen("second.txt", "w");
+
+    ch = fgetc(f1);
+
+    while (ch != '#')
+    {
+        fputc(ch, f2);
+        ch = fgetc(f1);
+    }
+
+    fclose(f1);
+    fclose(f2);
+
+    printf("File copied successfully.");
+
+    getch();
+}
+</code></pre>
+
+<h3>Sample Output</h3>
+<pre>
+Enter data (# to stop): Hello World#
+File copied successfully.
+
+Second File Content:
+Hello World
+</pre>
+</details>
+
+<hr>
+
+<h2>Question 5.</h2>
+<p>Create 2 files and concatenate them into a third file.</p>
+
+<details>
+<summary>View Solution</summary>
+
+<h3>C Program Code</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    FILE *f1, *f2, *f3;
+    char ch;
+
+    clrscr();
+
+    f1 = fopen("first.txt", "w");
+
+    printf("Enter first file data (# to stop): ");
+
+    while ((ch = getchar()) != '#')
+    {
+        fputc(ch, f1);
+    }
+
+    fputc('#', f1);
+    fclose(f1);
+
+    f2 = fopen("second.txt", "w");
+
+    printf("Enter second file data (# to stop): ");
+
+    while ((ch = getchar()) != '#')
+    {
+        fputc(ch, f2);
+    }
+
+    fputc('#', f2);
+    fclose(f2);
+
+    f1 = fopen("first.txt", "r");
+    f2 = fopen("second.txt", "r");
+    f3 = fopen("third.txt", "w");
+
+    ch = fgetc(f1);
+
+    while (ch != '#')
+    {
+        fputc(ch, f3);
+        ch = fgetc(f1);
+    }
+
+    fputc(' ', f3);
+
+    ch = fgetc(f2);
+
+    while (ch != '#')
+    {
+        fputc(ch, f3);
+        ch = fgetc(f2);
+    }
+
+    fclose(f1);
+    fclose(f2);
+    fclose(f3);
+
+    printf("Files concatenated successfully.");
+
+    getch();
+}
+</code></pre>
+
+<h3>Sample Output</h3>
+<pre>
+Enter first file data (# to stop): Hello#
+Enter second file data (# to stop): World#
+Files concatenated successfully.
+
+Third File Content:
+Hello World
+</pre>
+</details>
+
+<hr>
+
+<h2>Question 6.</h2>
+<p>Create a file and count the number of characters in the file.</p>
+
+<details>
+<summary>View Solution</summary>
+
+<h3>C Program Code</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    FILE *fp;
+    char ch;
+    int count = 0;
+
+    clrscr();
+
+    fp = fopen("data.txt", "w");
+
+    printf("Enter data (# to stop): ");
+
+    while ((ch = getchar()) != '#')
+    {
+        fputc(ch, fp);
+    }
+
+    fputc('#', fp);
+    fclose(fp);
+
+    fp = fopen("data.txt", "r");
+
+    ch = fgetc(fp);
+
+    while (ch != '#')
+    {
+        count++;
+        ch = fgetc(fp);
+    }
+
+    fclose(fp);
+
+    printf("Total characters = %d", count);
+
+    getch();
+}
+</code></pre>
+
+<h3>Sample Output</h3>
+<pre>
+Enter data (# to stop): Hello World#
+Total characters = 11
+</pre>
+</details>
+
+<hr>
+
+<h2>Question 7.</h2>
+<p>Create a file and count the number of words in the file.</p>
+
+<details>
+<summary>View Solution</summary>
+
+<h3>C Program Code</h3>
+<pre><code>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    FILE *fp;
+    char ch;
+    int count = 0, flag = 0;
+
+    clrscr();
+
+    fp = fopen("data.txt", "w");
+
+    printf("Enter data (# to stop): ");
+
+    while ((ch = getchar()) != '#')
+    {
+        fputc(ch, fp);
+    }
+
+    fputc('#', fp);
+    fclose(fp);
+
+    fp = fopen("data.txt", "r");
+
+    ch = fgetc(fp);
+
+    while (ch != '#')
+    {
+        if (ch == ' ' || ch == '\n' || ch == '\t')
+        {
+            flag = 0;
+        }
+        else if (flag == 0)
+        {
+            count++;
+            flag = 1;
+        }
+
+        ch = fgetc(fp);
+    }
+
+    fclose(fp);
+
+    printf("Total words = %d", count);
+
+    getch();
+}
+</code></pre>
+
+<h3>Sample Output</h3>
+<pre>
+Enter data (# to stop): Hello World#
+Total words = 2
+</pre>
+</details>
+
+<hr>
+
+</body>
+</html>
